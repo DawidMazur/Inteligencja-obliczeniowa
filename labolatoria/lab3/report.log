@@ -1,0 +1,67 @@
+2023-10-28 13:42:29,824 - pyswarms.single.global_best - INFO - Optimize for 200 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 13:42:29,867 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.5994112353678425e-12, best pos: [-7.84438890e-07 -9.92001443e-07]
+2023-10-28 13:42:39,719 - pyswarms.single.global_best - INFO - Optimize for 50 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.8}
+2023-10-28 13:42:39,733 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 3.1166969596714194e-07, best pos: [-0.00047861 -0.0002874 ]
+2023-10-28 13:42:42,570 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+2023-10-28 13:42:42,572 - matplotlib.animation - INFO - MovieWriter._run: running command: 'C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe' -size 1000x800 -depth 8 -delay 10.0 -loop 0 rgba:- -layers OptimizePlus plot0.gif
+2023-10-28 13:43:04,563 - pyswarms.single.global_best - INFO - Optimize for 50 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.8}
+2023-10-28 13:43:04,577 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 4.415632717139684e-09, best pos: [ 4.24821304e-05 -5.10969795e-05]
+2023-10-28 13:43:07,043 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+2023-10-28 13:43:07,045 - matplotlib.animation - INFO - MovieWriter._run: running command: 'C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe' -size 1000x800 -depth 8 -delay 10.0 -loop 0 rgba:- -layers OptimizePlus plot0.gif
+2023-10-28 13:44:38,407 - pyswarms.single.global_best - INFO - Optimize for 50 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.6}
+2023-10-28 13:44:38,420 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.0686261325846725e-12, best pos: [9.25794543e-07 4.59924556e-07]
+2023-10-28 13:44:40,620 - matplotlib.animation - INFO - Animation.save using <class 'matplotlib.animation.ImageMagickWriter'>
+2023-10-28 13:44:40,621 - matplotlib.animation - INFO - MovieWriter._run: running command: 'C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe' -size 1000x800 -depth 8 -delay 10.0 -loop 0 rgba:- -layers OptimizePlus plot0.gif
+2023-10-28 13:50:14,105 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 13:50:48,689 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 13:50:48,924 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2.008219557885907, best pos: [1.00037903 1.00372374]
+2023-10-28 13:51:15,063 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 13:51:15,441 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2.0198374826692227, best pos: [1.0068621  1.00302851]
+2023-10-28 14:00:02,956 - pyswarms.backend.generators - ERROR - Bounds and/or init_pos should be of size (2,)
+Traceback (most recent call last):
+  File "C:\Users\Dawid M\anaconda3\lib\site-packages\pyswarms\backend\generators.py", line 81, in generate_swarm
+    pos = center * np.random.uniform(
+  File "mtrand.pyx", line 1134, in numpy.random.mtrand.RandomState.uniform
+  File "_common.pyx", line 600, in numpy.random._common.cont
+  File "_common.pyx", line 517, in numpy.random._common.cont_broadcast_2
+  File "__init__.pxd", line 741, in numpy.PyArray_MultiIterNew3
+ValueError: shape mismatch: objects cannot be broadcast to a single shape.  Mismatch is between arg 0 with shape (10, 2) and arg 1 with shape (10, 1, 6).
+2023-10-28 14:00:23,097 - pyswarms.backend.generators - ERROR - Bounds and/or init_pos should be of size (6,)
+Traceback (most recent call last):
+  File "C:\Users\Dawid M\anaconda3\lib\site-packages\pyswarms\backend\generators.py", line 81, in generate_swarm
+    pos = center * np.random.uniform(
+  File "mtrand.pyx", line 1134, in numpy.random.mtrand.RandomState.uniform
+  File "_common.pyx", line 600, in numpy.random._common.cont
+  File "_common.pyx", line 518, in numpy.random._common.cont_broadcast_2
+  File "_common.pyx", line 245, in numpy.random._common.validate_output_shape
+ValueError: Output size (10, 6) is not compatible with broadcast dimensions of inputs (10, 10, 6).
+2023-10-28 14:01:04,914 - pyswarms.backend.generators - ERROR - Bounds and/or init_pos should be of size (6,)
+Traceback (most recent call last):
+  File "C:\Users\Dawid M\anaconda3\lib\site-packages\pyswarms\backend\generators.py", line 81, in generate_swarm
+    pos = center * np.random.uniform(
+  File "mtrand.pyx", line 1134, in numpy.random.mtrand.RandomState.uniform
+  File "_common.pyx", line 600, in numpy.random._common.cont
+  File "_common.pyx", line 518, in numpy.random._common.cont_broadcast_2
+  File "_common.pyx", line 245, in numpy.random._common.validate_output_shape
+ValueError: Output size (12, 6) is not compatible with broadcast dimensions of inputs (12, 12, 6).
+2023-10-28 14:04:40,972 - pyswarms.backend.generators - ERROR - Bounds and/or init_pos should be of size (6,)
+Traceback (most recent call last):
+  File "C:\Users\Dawid M\anaconda3\lib\site-packages\pyswarms\backend\generators.py", line 81, in generate_swarm
+    pos = center * np.random.uniform(
+  File "mtrand.pyx", line 1134, in numpy.random.mtrand.RandomState.uniform
+  File "_common.pyx", line 600, in numpy.random._common.cont
+  File "_common.pyx", line 518, in numpy.random._common.cont_broadcast_2
+  File "_common.pyx", line 245, in numpy.random._common.validate_output_shape
+ValueError: Output size (12, 6) is not compatible with broadcast dimensions of inputs (12, 12, 6).
+2023-10-28 14:05:33,492 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 14:05:33,748 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1.0102910980554718, best pos: [0.16270833 0.99477711 0.19453196 0.28531419 0.84257653 0.93565404]
+2023-10-28 14:06:36,485 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 14:06:36,750 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -2.8221081441719758, best pos: [0.54669107 0.60453027 0.99535154 0.99816857 0.11382871 0.4992115 ]
+2023-10-28 14:27:47,024 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 14:27:47,289 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -2.8199688470835316, best pos: [0.48535103 0.53082601 0.99019085 0.99233957 0.25105664 0.34461573]
+2023-10-28 14:36:20,471 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 14:36:20,719 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -2.8224657179265464, best pos: [0.45033028 0.4611514  0.99062344 0.98998763 0.53352442 0.22324146]
+2023-10-28 14:36:57,362 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 14:36:57,620 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -2.81979777245048, best pos: [0.49762757 0.47594539 0.97617675 0.99979314 0.34856469 0.37315158]
+2023-10-28 14:37:46,493 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2023-10-28 14:37:46,774 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -2.8058481852270267, best pos: [0.79109297 0.66940486 0.96629612 0.99259899 0.44555835 0.3076112 ]
