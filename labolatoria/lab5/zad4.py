@@ -2,13 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from keras.utils import normalize
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.callbacks import EarlyStopping
-from tensorflow.keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.callbacks import EarlyStopping
+from keras.utils import to_categorical
 # from tensorflow.keras.preprocessing import StandardScaler
 from tensorflow.math import confusion_matrix as keras_confusion_matrix
-from tensorflow.keras.metrics import CategoricalAccuracy
+from keras.metrics import CategoricalAccuracy
 
 df = pd.read_csv('diabetes.csv')
 df['class'] = df['class'].replace({'tested_negative': 0, 'tested_positive': 1})
@@ -35,7 +35,7 @@ model.add(Dense(2, activation='softmax'))
 # model.add(Dense(1, activation='sigmoid'))
 
 
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=[CategoricalAccuracy()])
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=[CategoricalAccuracy()])
 # model.compile(optimizer='adam', loss='binary_crossentropy', metrics=[CategoricalAccuracy()])
 # model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
@@ -43,7 +43,7 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=[Catego
 # early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
 
 # Train the model
-history = model.fit(train_inputs, train_labels, epochs=100, validation_split=0.3)
+history = model.fit(train_inputs, train_labels, epochs=700, validation_split=0.2)
 # history = model.fit(train_inputs, train_labels, epochs=800, validation_split=0.3, verbose=0)
 
 
