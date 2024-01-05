@@ -1,13 +1,12 @@
-# example of training a gan on mnist
-import glob
+import os
+from keras.utils import load_img, img_to_array
+import numpy as np
 
-from numpy import expand_dims
 from numpy import zeros
 from numpy import ones
 from numpy import vstack
 from numpy.random import randn
 from numpy.random import randint
-from keras.datasets.mnist import load_data
 from keras.optimizers import Adam
 from keras.models import Sequential
 from keras.layers import Dense
@@ -19,50 +18,56 @@ from keras.layers import LeakyReLU
 from keras.layers import Dropout
 from matplotlib import pyplot
 
+colors = 3  # ilość kolorów
+img_size = [64, 64]  # rozmiar obrazka
+path = "img"
 
-# define the standalone discriminator model
-def define_discriminator(in_shape=(28, 28, 1)):
+n_nodes = colors * img_size[0] * img_size[1]
+
+
+def define_discriminator(in_shape=(img_size[0], img_size[1], colors)):
     model = Sequential()
-    model.add(Conv2D(64, (3, 3), strides=(2, 2), padding='same', input_shape=in_shape))
+
+    model.add(Conv2D(colors, (3, 3), strides=(2, 2), padding='same', input_shape=in_shape))
     model.add(LeakyReLU(alpha=0.2))
     model.add(Dropout(0.4))
-    model.add(Conv2D(64, (3, 3), strides=(2, 2), padding='same'))
+    model.add(Conv2D(colors, (3, 3), strides=(2, 2), padding='same'))
     model.add(LeakyReLU(alpha=0.2))
     model.add(Dropout(0.4))
     model.add(Flatten())
-    model.add(Dense(1, activation='sigmoid'))
+    # model.add(Dense(1, activation='sigmoid'))
+    model.add(Dense(n_nodes, activation='sigmoid'))
     # compile model
     opt = Adam(learning_rate=0.0002, beta_1=0.5)
     model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
+
+    # przedstaw model
     model.summary()
     return model
 
-
-# define the standalone generator model
-def define_generator(latent_dim):
+def define_generator(latent_dim, img_size, colors):
     model = Sequential()
-    # foundation for 7x7 image
-    n_nodes = 128 * 7 * 7
+
+    x_size = int(img_size[0] / 2 / 2)
+    y_size = int(img_size[1] / 2 / 2)
+    n_nodes = colors * x_size * y_size
+    # model.add(Dense(n_nodes, input_dim=latent_dim))
     model.add(Dense(n_nodes, input_dim=latent_dim))
     model.add(LeakyReLU(alpha=0.2))
-    model.add(Reshape((7, 7, 128)))
-    # upsample to 14x14
-    model.add(Conv2DTranspose(128, (4, 4), strides=(2, 2), padding='same'))
+    model.add(Reshape((x_size, y_size, colors)))
+    model.add(Conv2DTranspose(colors, (4, 4), strides=(2, 2), padding='same'))
     model.add(LeakyReLU(alpha=0.2))
-    # upsample to 28x28
-    model.add(Conv2DTranspose(128, (4, 4), strides=(2, 2), padding='same'))
+    model.add(Conv2DTranspose(colors, (4, 4), strides=(2, 2), padding='same'))
     model.add(LeakyReLU(alpha=0.2))
-    model.add(Conv2D(1, (7, 7), activation='sigmoid', padding='same'))
+    model.add(Conv2D(colors, (3, 3), activation='sigmoid', padding='same'))
 
-    # load from file with highest number if exists
-    files = glob.glob("generator_model_*.h5")
-    if len(files) > 0:
-        files.sort()
-        model.load_weights(files[-1])
-        print("Loaded generator weights from file: ", files[-1])
+    # przedstaw model
     model.summary()
     return model
 
+
+# # define the standalone generator model
+# def define_generator(latent_dim, img_size, colors):
 
 # define the combined generator and discriminator model, for updating the generator
 def define_gan(g_model, d_model):
@@ -81,15 +86,27 @@ def define_gan(g_model, d_model):
 
 
 # load and prepare mnist training images
-def load_real_samples():
-    # load mnist dataset
-    (trainX, _), (testX, _) = load_data()
-    # expand to 3d, e.g. add channels dimension
-    X = expand_dims(testX, axis=-1)
-    # convert from unsigned ints to floats
-    X = X.astype('float32')
-    # scale from [0,255] to [0,1]
-    X = X / 255.0
+def load_real_samples(folder_path):
+    # Collect file paths for all images in the specified folder
+    image_files = [os.path.join(folder_path, file) for file in os.listdir(folder_path) if
+                   file.lower().endswith(('.png'))]
+    # Load and process each image
+    images = []
+    for file_path in image_files:
+        # Load image
+        img = load_img(file_path, target_size=img_size)
+
+        # Convert image to array
+        img_array = img_to_array(img)
+
+        # Scale pixel values to the range [0, 1]
+        img_array = img_array / 255.0
+
+        # Append to the list of images
+        images.append(img_array)
+
+    # Convert the list of images to a NumPy array
+    X = np.array(images)
     return X
 
 
@@ -100,7 +117,7 @@ def generate_real_samples(dataset, n_samples):
     # retrieve selected images
     X = dataset[ix]
     # generate 'real' class labels (1)
-    y = ones((n_samples, 1))
+    y = ones((n_samples, n_nodes))
     return X, y
 
 
@@ -120,7 +137,7 @@ def generate_fake_samples(g_model, latent_dim, n_samples):
     # predict outputs
     X = g_model.predict(x_input)
     # create 'fake' class labels (0)
-    y = zeros((n_samples, 1))
+    y = zeros((n_samples, n_nodes))
     return X, y
 
 
@@ -133,7 +150,7 @@ def save_plot(examples, epoch, n=10):
         # turn off axis
         pyplot.axis('off')
         # plot raw pixel data
-        pyplot.imshow(examples[i, :, :, 0], cmap='gray_r')
+        pyplot.imshow(examples[i])
     # save plot to file
     filename = 'generated_plot_e%03d.png' % (epoch + 1)
     pyplot.savefig(filename)
@@ -155,17 +172,16 @@ def summarize_performance(epoch, g_model, d_model, dataset, latent_dim, n_sample
     # save plot
     save_plot(x_fake, epoch)
     # save the generator model tile file
-    filename = 'generator_model_%03d.h5' % (epoch + 1)
+    filename = 'generator_model_%03d.keras' % (epoch + 1)
     g_model.save(filename)
 
 
 # train the generator and discriminator
-def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=100, n_batch=256, starting_point=0):
+def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=100, n_batch=256):
     bat_per_epo = int(dataset.shape[0] / n_batch)
     half_batch = int(n_batch / 2)
     # manually enumerate epochs
-    for iii in range(n_epochs):
-        i = iii + starting_point
+    for i in range(n_epochs):
         # enumerate batches over the training set
         for j in range(bat_per_epo):
             # get randomly selected 'real' samples
@@ -193,16 +209,15 @@ latent_dim = 100
 # create the discriminator
 d_model = define_discriminator()
 # create the generator
-g_model = define_generator(latent_dim)
+g_model = define_generator(latent_dim, img_size, colors)
 # create the gan
 gan_model = define_gan(g_model, d_model)
 # load image data
-dataset = load_real_samples()
+dataset = load_real_samples(path)
+print(dataset.shape)
 # number of epochs
-n_epochs = 200
+n_epochs = 5
 # batch size
 batch_size = 256
-
-starting_point = 96
 # train model
-train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs, batch_size, starting_point)
+train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs, batch_size)
