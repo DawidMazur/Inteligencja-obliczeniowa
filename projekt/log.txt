@@ -1,0 +1,63 @@
+2024-01-06 00:23:22,155 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
+2024-01-06 00:23:23,255 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 09:36:20,014 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 10:08:52,287 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 10:18:00,625 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 10:19:28,023 - INFO - Epizod: 1 Nagroda: 30.0 epsilon: 0.95588854 model_trains: 7823
+2024-01-06 10:23:12,824 - INFO - Epizod: 2 Nagroda: 100.0 epsilon: 0.9511090973 model_trains: 8405
+2024-01-06 10:28:47,760 - INFO - Epizod: 3 Nagroda: 130.0 epsilon: 0.9463535518135 model_trains: 9277
+2024-01-06 10:34:16,125 - INFO - Epizod: 4 Nagroda: 140.0 epsilon: 0.9416217840544325 model_trains: 10159
+2024-01-06 10:37:08,236 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 10:40:29,841 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 10:43:21,751 - INFO - Epizod: 1 Nagroda: 110.0 epsilon: 0.9369128950000001 model_trains: 11037
+2024-01-06 10:51:42,022 - INFO - Epizod: 2 Nagroda: 205.0 epsilon: 0.9322283305250001 model_trains: 12342
+2024-01-06 10:58:56,835 - INFO - Epizod: 3 Nagroda: 160.0 epsilon: 0.9275671888723751 model_trains: 13498
+2024-01-06 11:03:35,966 - INFO - Epizod: 4 Nagroda: 110.0 epsilon: 0.9229293529280133 model_trains: 14232
+2024-01-06 11:10:25,162 - INFO - Epizod: 5 Nagroda: 120.0 epsilon: 0.9183147061633732 model_trains: 15348
+2024-01-06 11:13:54,216 - INFO - Epizod: 6 Nagroda: 100.0 epsilon: 0.9137231326325563 model_trains: 15942
+2024-01-06 11:16:59,844 - INFO - Epizod: 7 Nagroda: 150.0 epsilon: 0.9091545169693935 model_trains: 16476
+2024-01-06 11:21:39,092 - INFO - Epizod: 8 Nagroda: 150.0 epsilon: 0.9046087443845465 model_trains: 17277
+2024-01-06 11:29:57,242 - INFO - Epizod: 9 Nagroda: 235.0 epsilon: 0.9000857006626238 model_trains: 18652
+2024-01-06 11:39:10,091 - INFO - Epizod: 10 Nagroda: 295.0 epsilon: 0.8955852721593107 model_trains: 20132
+2024-01-06 11:48:41,350 - INFO - Epizod: 11 Nagroda: 205.0 epsilon: 0.8911073457985141 model_trains: 21736
+2024-01-06 11:58:38,922 - INFO - Epizod: 12 Nagroda: 175.0 epsilon: 0.8866518090695216 model_trains: 23424
+2024-01-06 12:06:01,801 - INFO - Epizod: 13 Nagroda: 160.0 epsilon: 0.8822185500241739 model_trains: 24617
+2024-01-06 12:18:15,129 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 12:24:21,427 - INFO - Epizod: 1 Nagroda: 140.0 epsilon: 0.87780691 model_trains: 27177
+2024-01-06 12:30:25,811 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 12:31:12,435 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 12:35:28,022 - INFO - Epizod: 1 Nagroda: 130.0 epsilon: 0.87341697 model_trains: 28407
+2024-01-06 12:38:03,770 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 12:39:25,390 - INFO - Epizod: 1 Nagroda: 70.0 epsilon: 0.87341697 model_trains: 28690
+2024-01-06 12:40:40,406 - INFO - Epizod: 2 Nagroda: 50.0 epsilon: 0.8690498851499999 model_trains: 28958
+2024-01-06 12:41:39,831 - INFO - Epizod: 3 Nagroda: 20.0 epsilon: 0.8647046357242499 model_trains: 29170
+2024-01-06 12:45:22,498 - INFO - Epizod: 4 Nagroda: 120.0 epsilon: 0.8603811125456287 model_trains: 29980
+2024-01-06 12:47:49,143 - INFO - Epizod: 5 Nagroda: 130.0 epsilon: 0.8560792069829005 model_trains: 30512
+2024-01-06 12:53:57,522 - INFO - Epizod: 6 Nagroda: 190.0 epsilon: 0.851798810947986 model_trains: 31833
+2024-01-06 12:58:09,983 - INFO - Epizod: 7 Nagroda: 205.0 epsilon: 0.8475398168932461 model_trains: 32750
+2024-01-06 13:03:48,501 - INFO - Epizod: 8 Nagroda: 325.0 epsilon: 0.8433021178087798 model_trains: 33963
+2024-01-06 13:12:30,460 - INFO - Epizod: 9 Nagroda: 175.0 epsilon: 0.8390856072197359 model_trains: 35837
+2024-01-06 13:16:45,727 - INFO - Epizod: 10 Nagroda: 175.0 epsilon: 0.8348901791836372 model_trains: 36763
+2024-01-06 13:19:42,991 - INFO - Epizod: 11 Nagroda: 130.0 epsilon: 0.830715728287719 model_trains: 37391
+2024-01-06 13:22:07,613 - INFO - Epizod: 12 Nagroda: 100.0 epsilon: 0.8265621496462804 model_trains: 37916
+2024-01-06 13:34:11,142 - INFO - Epizod: 13 Nagroda: 220.0 epsilon: 0.822429338898049 model_trains: 40487
+2024-01-06 13:38:13,532 - INFO - Epizod: 14 Nagroda: 90.0 epsilon: 0.8183171922035588 model_trains: 41350
+2024-01-06 13:41:00,710 - INFO - Epizod: 15 Nagroda: 130.0 epsilon: 0.814225606242541 model_trains: 41947
+2024-01-06 13:45:42,093 - INFO - Epizod: 16 Nagroda: 140.0 epsilon: 0.8101544782113284 model_trains: 42955
+2024-01-06 13:49:00,446 - INFO - Epizod: 17 Nagroda: 140.0 epsilon: 0.8061037058202717 model_trains: 43656
+2024-01-06 13:52:49,319 - INFO - Epizod: 18 Nagroda: 80.0 epsilon: 0.8020731872911703 model_trains: 44467
+2024-01-06 13:57:42,947 - INFO - Epizod: 19 Nagroda: 175.0 epsilon: 0.7980628213547144 model_trains: 45499
+2024-01-06 14:00:34,947 - INFO - Epizod: 20 Nagroda: 130.0 epsilon: 0.7940725072479409 model_trains: 46106
+2024-01-06 14:07:33,411 - INFO - Epizod: 21 Nagroda: 250.0 epsilon: 0.7901021447117011 model_trains: 47583
+2024-01-06 14:17:23,490 - INFO - Epizod: 22 Nagroda: 235.0 epsilon: 0.7861516339881426 model_trains: 49664
+2024-01-06 14:24:36,135 - INFO - Epizod: 23 Nagroda: 235.0 epsilon: 0.7822208758182019 model_trains: 51191
+2024-01-06 14:31:58,631 - INFO - Epizod: 24 Nagroda: 310.0 epsilon: 0.7783097714391108 model_trains: 52636
+2024-01-06 14:32:49,789 - INFO - Epizod: 25 Nagroda: 10.0 epsilon: 0.7744182225819153 model_trains: 52800
+2024-01-06 14:34:10,569 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 14:35:08,138 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 14:36:58,575 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 14:38:45,249 - INFO - Epizod: 26 Nagroda: 130.0 epsilon: 0.7705461314690057 model_trains: 53882
+2024-01-06 14:38:57,116 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 14:40:35,768 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 14:41:49,006 - WARNING - Skipping variable loading for optimizer 'Adam', because it has 1 variables whereas the saved optimizer has 21 variables. 
+2024-01-06 14:42:15,008 - INFO - Epizod: 27 Nagroda: 80.0 epsilon: 0.7666934008116607 model_trains: 54508
